@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use"> <!-- TODO: add some description, visible outside -->
+  <meta name="keywords" content="Reinforcement Learning, LLMs, Strategic Tool Use, UIUC, VTool-R1, VLMs, VLM"> <!-- TODO: add some keywords for search engine -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReTool</title>
+
+  <link href="https://fonts.cdnfonts.com/css/br-sonoma" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome_6_7_2.all.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome_6_7_2.all.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a> -->
+
+      <!-- <div class="navbar-item has-dropdown is-hoverable"> -->
+        <!-- <a class="navbar-link">
+          More Research
+        </a> -->
+        <!-- <div class="navbar-dropdown"> -->
+          <!-- <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+
+  <!-- </div> -->
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use
+          </h1> <!-- TODO: fix the title -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Mingyuan Wu<sup>1*</sup>,</span>
+            <span class="author-block">Jingcheng Yang<sup>1*</sup>,</span>
+            <span class="author-block">Jize Jiang<sup>1</sup>,</span>
+            <span class="author-block">Meitang Li<sup>2</sup>,</span>
+            <span class="author-block">Kaizhuo Yan<sup>1</sup>,</span>
+            <span class="author-block">Hanchao Yu<sup>3</sup>,</span>
+            <span class="author-block">Minjia Zhang<sup>1</sup>,</span>
+            <span class="author-block">Chengxiang Zhai<sup>1</sup>,</span>
+            <span class="author-block">Klara Nahrstedt<sup>1</sup></span>
+          </div>
+
+          <br/>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Illinois Urbana Champaign</span>
+            <br>
+            <span class="author-block"><sup>2</sup>University of Michigan Ann Arbor</span>
+            <br>
+            <span class="author-block"><sup>3</sup>Independent Researcher</span>
+          </div>
+
+          <br>
+          
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">{mw34, klara}@cs.illinois.edu</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2505.19255"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="./static/images/ar.svg" alt="img" style="width: 100%; height: 100%">
+                  </span>
+                  <span>ArXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark"> <!-- TODO: fix repo link -->
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Soon)</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark"> <!-- TODO: fix dataset link -->
+                  <span class="icon">
+                      <i class="fa-regular fa-database"></i>
+                  </span>
+                  <span>Data (Soon)</span>
+                  </a>
+              </span>
+              <!-- Model Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark"> <!-- TODO: fix model link -->
+                  <span class="icon">
+                    <!-- <i class="fa-solid fa-face-smiling-hands"></i> -->
+                    <i class="fa-solid fa-face-smiling-hands" style="color: #FFD43B;"></i>
+                  </span>
+                  <span>Model (Soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <img src="static/images/puffin.png"/>
+        <span class="dnerf">Puffin-Zero</span> is an open reasoning language model that demonstrates the potential of
+        large-scale RL training from pretrained checkpoints on solving competition-level math problems.
+      </h2>
+      <h2 class="subtitle has-text-centered">
+        <img src="static/images/score.png"/>
+        <span class="dnerf">Puffin-Zero</span> achieves 45.4 points on AIME 2024, a comparable performance to DeepSeek-R1-Zero-
+        Qwen-32B.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p class="title is-5 has-text-left" style="font-weight: bold;">Updates</p>
+          <ul>
+            <li>[2025/05/25] ArXiv preprint available. <!--<span style="color: red;">[New!]</span>--></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">VTool-R1</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce VTool-R1, the first framework
+that trains VLMs to generate multimodal chains
+of thought by interleaving text and intermedi-
+ate visual reasoning steps. VTool-R1 integrates
+Python-based visual editing tools into the RFT
+process, enabling VLMs to learn when and how
+to generate visual reasoning steps that benefit
+final reasoning. Trained with outcome-based re-
+wards tied to task accuracy, our approach elicits
+strategic visual tool use for reasoning without
+relying on process-based supervision. Exper-
+iments on structured visual question answer-
+ing over charts and tables show that VTool-R1
+enhances reasoning performance by teaching
+VLMs to "think with images" and generate mul-
+timodal chain of thoughts with tools.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="subtitle has-text-centered">
+          <img src="./static/images/vtool_example.png"/>
+        </h2>
+        <b>Figure 2:</b> Qualitative Example from VTool-R1 (3B): The Model Successfully Integrates Intermediate Visual Steps.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Fully Open-Source -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Code</h3>
+          <p>
+            We will release the full training code and model weights of VTool-R1 soon. We utilized <a href="https://github.com/hiyouga/EasyR1">EasyR1</a>, a fork of <a href="https://github.com/volcengine/verl">veRL</a> with support of vision language models.
+          </p>
+          <h3 class="title is-4">Datasets</h3>
+          <p>
+            For training and validation, we used datasets and tools from <a href="https://zeyofu.github.io/ReFocus/">ReFocus</a>. We will release our data preparation scripts alongside our code soon.
+          </p>
+          <h3 class="title is-4">BibTeX</h3>
+<p>If you find our project helpful, please cite:</p>
+<pre style="background-color: #f5f5f5; padding: 0.8rem 1rem 0.4rem 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem;">
+@misc{wu2025vtoolr1vlmslearnthink,
+      title={VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use}, 
+      author={Mingyuan Wu and Jingcheng Yang and Jize Jiang and Meitang Li and Kaizhuo Yan and Hanchao Yu and Minjia Zhang and Chengxiang Zhai and Klara Nahrstedt},
+      year={2025},
+      eprint={2505.19255},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2505.19255}, 
+}
+</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Algorithm Insights</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose the <b>D</b>ecoupled Clip and <b>D</b>ynamic s<b>A</b>mpling <b>P</b>olicy <b>O</b>ptimization (DAPO) algorithm, which includes several key techniques as below. Detailed analysis and insights can be found in our technical report.
+          </p>
+          <ul>
+            <li>
+              <b>Clip-Higher</b>, which promotes the diversity of the system and avoids entropy collapse. We observe an entropy-collapsing phenomenon in our initial experiments. We propose increasing the upper clip range of the importance sampling ratio in policy gradient loss to mitigate this problem.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>Dynamic Sampling</b>, which improves training efficiency and stability. We propose a strategy that performs dynamic sampling and filters out prompt groups with the accuracy equal to 1 and 0, keeping a consistent number of prompts with effective gradients across batches.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>Token-level Policy Gradient Loss</b>, which is critical in long-CoT RL scenarios.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>Overlong Reward Shaping</b>, which reduces reward noise and stabilizes training.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Contributions</h2>
+        <div class="content has-text-justified">
+          <p>
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+        <div class="content has-text-justified">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{2025puffinzero,
+                author    = {Author 1, Author 2, Author 3},
+                title     = {Puffin-Zero},
+                journal   = {Arxiv},
+                year      = {2025},
+              }</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/pdf/dapo_paper.pdf">
+        <i class="fa-solid fa-file-pdf" style="color: #ec4646;"></i>
+      </a> -->
+      <!-- <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a> and licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
