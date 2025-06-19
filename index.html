@@ -117,7 +117,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2505.19255"
+                <a href="https://arxiv.org/pdf/2505.19255"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <img src="./static/images/ar.svg" alt="img" style="width: 100%; height: 100%">
@@ -212,13 +212,7 @@
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce VTool-R1, the first framework that trains VLMs to generate multimodal chains of thought by interleaving text and intermediate visual reasoning steps. VTool-R1 integrates Python-based visual editing tools into the RFT
-process, enabling VLMs to learn when and how
-to generate visual reasoning steps that benefit
-final reasoning. Trained with outcome-based rewards tied to task accuracy, our approach elicits
-strategic visual tool use for reasoning without
-relying on process-based supervision. Experiments on structured visual question answering over charts and tables show that VTool-R1 enhances reasoning performance by teaching
-VLMs to "think with images" and generate multimodal chain of thoughts with tools.
+We introduce VTool-R1, one of the first frameworks that trains VLMs to generate multimodal chains of thought by interleaving text and intermediate visual reasoning steps. VTool-R1 integrates Python-based visual editing tools into the RFT process, enabling VLMs to learn when and how to generate visual reasoning steps that benefit final reasoning. Trained with outcome-based rewards tied to task accuracy, our approach elicits strategic visual tool use for reasoning without relying on process-based supervision. Experiments on structured visual question answering over charts and tables show that VTool-R1 enhances reasoning performance by teaching VLMs to "think with images" and generate multimodal chain of thoughts with tools.
           </p>
         </div>
       </div>
@@ -229,6 +223,15 @@ VLMs to "think with images" and generate multimodal chain of thoughts with tools
           <img src="./static/images/vtool_example.png"/>
         </h2>
         <b>Figure 2:</b> Qualitative Example from VTool-R1 (3B): The Model Successfully Integrates Intermediate Visual Steps.
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="subtitle has-text-centered">
+          <img src="./static/images/accuracy_table.png" style="width: 300px;"/>
+        </h2>
+            VTool-R1 7B achieved a <b>71.7%</b> accuracy on the ReFOCUS-TableVQA dataset. Which is <b>10% higher</b> than the base accuracy of 64.7% using Qwen2.5-VL.
       </div>
     </div>
   </div>
@@ -262,6 +265,20 @@ VLMs to "think with images" and generate multimodal chain of thoughts with tools
       url={https://arxiv.org/abs/2505.19255}, 
 }
 </pre>
+
+<p>If you find the dataset helpful, please consider citing Refocus paper:</p>
+<pre style="background-color: #f5f5f5; padding: 0.8rem 1rem 0.4rem 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem;">
+@misc{fu2025refocusvisualeditingchain,
+      title={ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding}, 
+      author={Xingyu Fu and Minqian Liu and Zhengyuan Yang and John Corring and Yijuan Lu and Jianwei Yang and Dan Roth and Dinei Florencio and Cha Zhang},
+      year={2025},
+      eprint={2501.05452},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.05452}, 
+}
+</pre>
+
 
           <h3 class="title is-4">Acknowledgements</h3>
           <p>This research used the Delta advanced computing and data resource which is supported by the National Science Foundation (award OAC 2005572) and the State of Illinois. Delta is a joint effort of the University of Illinois Urbana-Champaign and its National Center for Supercomputing Applications.
